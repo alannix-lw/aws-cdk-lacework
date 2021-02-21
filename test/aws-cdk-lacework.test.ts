@@ -5,7 +5,10 @@ import * as AwsCdkLacework from '../lib/aws-cdk-lacework-stack';
 test('Empty Stack', () => {
     const app = new cdk.App();
     // WHEN
-    const stack = new AwsCdkLacework.AwsCdkLaceworkStack(app, 'MyTestStack');
+    const stack = new AwsCdkLacework.AwsCdkLaceworkStack(app, 'MyTestStack', {
+      laceworkAwsAccount: "123456789",
+      laceworkExternalIdLength: 12
+    });
     // THEN
     expectCDK(stack).to(matchTemplate({
       "Resources": {}
