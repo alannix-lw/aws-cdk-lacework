@@ -6,8 +6,7 @@ test('Empty Stack', () => {
     const app = new cdk.App();
     // WHEN
     const stack = new AwsCdkLacework.AwsCdkLaceworkStack(app, 'MyTestStack', {
-      laceworkAwsAccount: "123456789",
-      laceworkExternalIdLength: 12
+      laceworkAwsAccount: "123456789"
     });
     // THEN
     expectCDK(stack).to(matchTemplate({

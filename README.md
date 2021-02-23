@@ -16,6 +16,6 @@ This will install the AWS CDK, then this example's dependencies, and then build 
 
 ## Deploy
 
-Run `cdk deploy`. This will deploy / redeploy your Stack to your AWS Account.
+Run `cdk deploy --parameters externalId=<XXXXXXX>`. This will deploy / redeploy your Stack to your AWS Account.
 
 After the deployment you will see the External ID, IAM Role ARN, and SQS Queue URL - these are needed to then add the integration to Lacework.
