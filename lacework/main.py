@@ -62,7 +62,6 @@ def on_create(ssm_client, lacework_client):
 def on_delete(lacework_client):
   integrations = lacework_client.integrations.get()['data']
   for integration in integrations:
-    print(integration)
     if integration['TYPE'] in ('AWS_CT_SQS', 'AWS_CFG', 'DATADOG'):
       print(f"Started deleting integration {integration['NAME']}")
       lacework_client.integrations.delete(integration['INTG_GUID'])
